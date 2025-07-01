@@ -75,6 +75,7 @@
         backgroundColor: "white",
         zIndex: 9999,
         transform: "translate(0, 0)",
+        transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
     });
   
     const animateToFull = () => {
@@ -85,11 +86,15 @@
     };
   
     const animateClose = () => {
-        flareClass.value = "flare-shrink";
-        setTimeout(() => {
-            emits("close");
-        }, 500);
-    };
+  flareClass.value = "flare-shrink";
+
+  // Start moving the panel back to its origin rectangle
+  panelStyle.value = setStartStyle(props.startRect);
+
+  setTimeout(() => {
+    emits("close");
+  }, 500);
+};
   
     watch (
         () => props.startRect,
