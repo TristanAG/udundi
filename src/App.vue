@@ -2,12 +2,13 @@
   <div class="h-screen w-screen flex flex-col md:flex-row overflow-hidden md:h-screen relative">
     <div class="w-full md:w-1/3 bg-[#6A1B1A] text-white flex flex-col justify-center pl-10 pt-70 h-1/4 md:h-full">
       <h1
-  class="text-5xl md:text-9xl font-serif leading-tight relative z-10 pl-10 md:pl-20 lg:pl-24 -mt-50 md:mt-0"
->
-  Explore
-</h1>
-
-
+        :class="[
+          'text-5xl md:text-9xl font-serif leading-tight relative z-10 pl-10 md:pl-20 lg:pl-24 -mt-50 md:mt-0',
+          showExplore ? 'fade-in-left' : ''
+        ]"
+      >
+        Explore
+      </h1>
 
       <!-- Button with responsive padding -->
       <button
@@ -25,7 +26,6 @@
         </span>
         <span class="text-sm tracking-wide whitespace-nowrap flex-shrink-0">More Details</span>
       </button>
-
     </div>
 
     <div class="w-full md:w-2/3 relative h-3/4 md:h-full">
@@ -66,13 +66,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import DetailsPanel from "./components/DetailsPanel.vue";
 
 const isPanelOpen = ref(false);
 const buttonRect = ref(null);
 const openBtn = ref(null);
 const showButton = ref(true);
+const showExplore = ref(false);
+
+onMounted(() => {
+  setTimeout(() => {
+    showExplore.value = true;
+  }, 100);
+});
 
 const openPanel = () => {
   if (openBtn.value) {
@@ -91,5 +98,20 @@ const closePanel = () => {
 <style scoped>
 button {
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1s forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 </style>
