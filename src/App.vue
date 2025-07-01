@@ -10,14 +10,13 @@
         Explore
       </h1>
 
-      <!-- Button with responsive padding -->
       <button
         ref="openBtn"
         @click="openPanel"
         :class="[
           'flex items-center text-white py-2 gap-3 relative z-10',
           'transition-all duration-[300ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
-          'px-5 md:px-20 lg:px-[15%]',  // responsive horizontal padding
+          'px-5 md:px-20 lg:px-[15%]',
           { 'opacity-0 pointer-events-none': !showButton }
         ]"
       >

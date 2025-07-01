@@ -51,7 +51,6 @@
   const panelStyle = ref({});
   const flareClass = ref("");
   
-  // Responsive expandedStyle that changes based on viewport width for smooth mobile animation
   const getExpandedStyle = () => {
     if (window.innerWidth < 768) {
       return {
@@ -105,14 +104,13 @@
   const animateToFull = () => {
     nextTick(() => {
       flareClass.value = "flare-grow";
-      panelStyle.value = getExpandedStyle(); // Recalculate for responsive
+      panelStyle.value = getExpandedStyle();
     });
   };
   
   const animateClose = () => {
     flareClass.value = "flare-shrink";
   
-    // Start moving the panel back to its origin rectangle
     panelStyle.value = setStartStyle(props.startRect);
   
     setTimeout(() => {
@@ -189,10 +187,8 @@
     }
   }
   
-  /* Removed !important and aligned styles for smooth transition */
   @media (max-width: 768px) {
     div[style] {
-      /* These styles are set dynamically in JS, so keep minimal here */
       padding: 8px;
     }
   }
