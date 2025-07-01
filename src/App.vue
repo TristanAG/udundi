@@ -16,7 +16,7 @@
 
     <div class="w-full md:w-2/3 relative h-3/4 md:h-full">
       <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80"
+        src="./assets/Coding-Challenge-Image.png"
         alt="Forest"
         class="object-cover w-full h-full"
       />
