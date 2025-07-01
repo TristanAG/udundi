@@ -67,7 +67,7 @@
     const setStartStyle = (rect) => ({
         position: "fixed",
         top: `${rect.top + 27}px`,
-        left: `${rect.left + 27}px`,
+        left: `${rect.left + 48}px`,
         width: `${rect.width}px`,
         height: `${rect.height}px`,
         borderRadius: "12px",
@@ -132,38 +132,38 @@
 
     @keyframes flareGrow {
         0% {
-            transform: translate(-13%, -50%) scale(1);
+            transform: translate(-70%, -50%) scale(1);
             border-radius: 10%;
         }
         40% {
-            transform: translate(-13%, -50%) scale(1.08, 1.04);
+            transform: translate(-70%, -50%) scale(1, 1.04);
             border-radius: 7%;
         }
         70% {
-            transform: translate(-13%, -50%) scale(1.03, 1.02);
+            transform: translate(-70%, -50%) scale(1.18, 1.02);
             border-radius: 4%;
         }
         100% {
-            transform: translate(-13%, -50%) scale(1);
+            transform: translate(-70%, -50%) scale(1);
             border-radius: 0px;
         }
     }
 
     @keyframes flareShrink {
         0% {
-            transform: translate(-50%, -50%) scale(1);
+            transform: translate(-70%, -50%) scale(1);
             border-radius: 16px;
         }
         40% {
-            transform: translate(-50%, -50%) scale(1.03, 1.02);
+            transform: translate(-70%, -50%) scale(1.18, 1.02);
             border-radius: 20px;
         }
         70% {
-            transform: translate(-50%, -50%) scale(1.08, 1.04);
+            transform: translate(-70%, -50%) scale(1, 1.04);
             border-radius: 20px;
         }
         100% {
-            transform: translate(-50%, -50%) scale(0);
+            transform: translate(-70%, -50%) scale(0);
             border-radius: 12px;
         }
     }
