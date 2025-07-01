@@ -1,6 +1,6 @@
 <template>
     <div
-        class="fixed z-50 bg-white shadow-lg rounded-lg overflow-hidden"
+        class="fixed z-50 bg-white shadow-lg overflow-hidden"
         :style="panelStyle"
         :class="flareClass"
     >
@@ -12,7 +12,7 @@
             &times;
         </button>
   
-        <div class="panel-content p-8 max-w-lg mx-auto mt-12">
+        <div class="panel-content max-w-lg mx-auto mt-12">
             <h2 class="text-3xl font-bold mb-4">More Details About Our Offer</h2>
   
             <p class="mb-4">
@@ -55,25 +55,28 @@
         left: "50%",
         width: "600px",
         height: "400px",
-        transform: "translate(-50%, -50%)",
-        borderRadius: "44px",
+        // transform: "translate(-33%, -50%)",
+        
         overflow: "auto",
         position: "fixed",
         backgroundColor: "white",
         zIndex: 9999,
-        transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+        transition: "all 0.5s cubic-bezier(0.8, 1, 0.36, 1)",
     };
   
     const setStartStyle = (rect) => ({
         position: "fixed",
-        top: `${rect.top}px`,
-        left: `${rect.left}px`,
+        top: `${rect.top + 27}px`,
+        left: `${rect.left + 27}px`,
         width: `${rect.width}px`,
         height: `${rect.height}px`,
         borderRadius: "12px",
         overflow: "hidden",
         backgroundColor: "white",
         zIndex: 9999,
+        width: "60px",
+        height: "60px",
+        borderRadius: "50%",
         transform: "translate(0, 0)",
         transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
     });
@@ -86,15 +89,15 @@
     };
   
     const animateClose = () => {
-  flareClass.value = "flare-shrink";
+        flareClass.value = "flare-shrink";
 
-  // Start moving the panel back to its origin rectangle
-  panelStyle.value = setStartStyle(props.startRect);
+        // Start moving the panel back to its origin rectangle
+        panelStyle.value = setStartStyle(props.startRect);
 
-  setTimeout(() => {
-    emits("close");
-  }, 500);
-};
+        setTimeout(() => {
+            emits("close");
+        }, 500);
+    };
   
     watch (
         () => props.startRect,
@@ -129,20 +132,20 @@
 
     @keyframes flareGrow {
         0% {
-            transform: translate(-50%, -50%) scale(1);
-            border-radius: 12px;
+            transform: translate(-13%, -50%) scale(1);
+            border-radius: 10%;
         }
         40% {
-            transform: translate(-50%, -50%) scale(1.08, 1.04);
-            border-radius: 20px;
+            transform: translate(-13%, -50%) scale(1.08, 1.04);
+            border-radius: 7%;
         }
         70% {
-            transform: translate(-50%, -50%) scale(1.03, 1.02);
-            border-radius: 16px;
+            transform: translate(-13%, -50%) scale(1.03, 1.02);
+            border-radius: 4%;
         }
         100% {
-            transform: translate(-50%, -50%) scale(1);
-            border-radius: 16px;
+            transform: translate(-13%, -50%) scale(1);
+            border-radius: 0px;
         }
     }
 

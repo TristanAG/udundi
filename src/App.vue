@@ -9,7 +9,7 @@
         @click="openPanel"
         class="flex items-center text-white px-5 py-2 gap-3 hover:bg-white hover:text-[#6A1B1A] transition"
       >
-        <span class="text-2xl">+</span>
+        <span class="text-2xl"><img src="./assets/Plus.svg" /></span>
         <span class="text-sm tracking-wide">More Details</span>
       </button>
     </div>
