@@ -38,19 +38,19 @@
       <div class="absolute bottom-6 right-6 flex flex-col space-y-4">
         <a
           href="#"
-          class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition"
+          class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition"
         >
           <img
-            src="https://img.icons8.com/ios-filled/24/000000/facebook.png"
+            src="./assets/Facebook.svg"
             alt="Facebook"
           />
         </a>
         <a
           href="#"
-          class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-200 transition"
+          class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition"
         >
           <img
-            src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png"
+            src="./assets/Instagram.svg"
             alt="Instagram"
           />
         </a>
